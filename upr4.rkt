@@ -42,7 +42,8 @@
  ;   (if (= n 0) (derive id)
  ;       (derive-n (derive (- n 1) f))
   ;      )))
-
+(if (= n 0)
+    (derive (derive-n (- n 1) f)))
 
 
 
