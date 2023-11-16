@@ -6,7 +6,7 @@ int main() {
 	std::ifstream fin("my_books.bin", std::ios::in || std::ios::binary);
 
 	while (fin.peek() != EOF) {
-		// Прочетете обекта от `fin` и го отпечатайте на `stdout`.
+		// ГЏГ°Г®Г·ГҐГІГҐГІГҐ Г®ГЎГҐГЄГІГ  Г®ГІ `fin` ГЁ ГЈГ® Г®ГІГЇГҐГ·Г ГІГ Г©ГІГҐ Г­Г  `stdout`.
 		// ...
 	}
 
