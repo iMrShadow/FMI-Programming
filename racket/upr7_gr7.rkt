@@ -34,7 +34,7 @@
 
 (define (uniques lst)
 (if (null? lst) '()
-    (let [(res (uniques (tail)))]
+    (let [(res (uniques (tail lst)))]
       (if (member (head lst) res)
           res
           (cons (head lst) res)))))
@@ -68,8 +68,19 @@
   (if (and (>= (car lst) (car lst1)) (<= (cdr lst) (cdr lst1)))
       #t
       #f))
-        
 
+(define (group-by f lst)
+  (let [(values (uniques (map f lst)))]
+  (map (lambda (val)
+       (list val
+             (filter (lambda (x)
+                       (equal? (f x) val)) lst)))
+       values)))
+
+(define (count-my-args f . lsts)
+  (+ 1 (length lsts)))
+(define (max* x y . xs)
+  (apply max xs))
 
 
 
